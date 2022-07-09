@@ -19,6 +19,7 @@ import Users from "./Pages/Dashboad/Users";
 import RequireAdmin from "./Pages/Login/RequireAdmin";
 import AddDoctor from "./Pages/Dashboad/AddDoctor";
 import MangeDoctors from "./Pages/Dashboad/MangeDoctors";
+import Contract from "./Pages/Home/Contract";
 
 function App() {
   return (
@@ -27,8 +28,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<RequireAuth>
+          <About></About>
+        </RequireAuth>} />
         <Route path="/login" element={<Login />} />
+        <Route path="/contact" element={<Contract></Contract>} />
          <Route path="/signup" element={<SignUp />} />  
         <Route path="/appointment" element={<RequireAuth>
           <Appointment />
